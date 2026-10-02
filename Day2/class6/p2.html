@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Contact Us</title></head>
+    <body>
+        <h1>Contact Us</h1>
+        <p>Fill out the form below, and we'll get back to you within 24 hours!</p>
+
+        <form action="/contact" method="POST">
+            <fieldset>
+                <legend>Your Information</legend>
+
+                <p>
+                    <label for="name">Full Name *</label><br />
+                    <input type="text" id="name" name="name"
+                    required minlength="3" placeholder="Alex john" />
+                </p>
+
+                <p>
+                    <label for="email">Email *</label><br />
+                    <input type="email" id="email" name="email" required
+                    placeholder="Fahmida@gmail.com" />
+                </p>
+
+                <p>
+                    <label for="phone">Phone</label><br />
+                    <input type="tel" id="phone" name="phone"
+                    pattern="[0-9]{11}" placeholder="01723567890" />
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Message</legend>
+
+                <p>
+                    <label for="subject">Subject:</label><br />
+                    <select id="subject" name="subject" required>
+                        <option value="">-- Choose --</option>
+                        <option value="general">General Question</option>
+                        <option value="support">Technical Support</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="msg">Your Message *</label><br />
+                    <textarea id="msg" name="msg" rows="5" cols="40"
+                    required minlength="10"></textarea>
+                </p>
+            </fieldset>
+
+            <button type="submit">Send Message</button>
+            <button type="reset">Clear</button>
+        </form>
+    </body>
+</html>
