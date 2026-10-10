@@ -1,0 +1,215 @@
+/* ==========================================
+   1. Design Tokens (:root)
+   ========================================== */
+:root {
+    --primary-color: #2b6cb0;
+    --primary-hover: #2c5282;
+    --text-color: #2d3748;
+    --bg-color: #f7fafc;
+    --card-bg: #ffffff;
+    --border-radius: 12px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* ==========================================
+   2. Header & Filter Chips
+   ========================================== */
+.gallery-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.gallery-header h1 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.gallery-header p {
+    color: #718096;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Category Filter (Chips) */
+.filter-chips {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Wrap on mobile */
+}
+
+.chip {
+    padding: 8px 18px;
+    border: 1px solid #e2e8f0;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.chip:hover, .chip.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+/* ==========================================
+   3. Gallery Grid (Flex & CSS Grid Blueprint)
+   ========================================== */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Desktop layout using CSS Grid auto-fit minmax(220px, 1fr) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Image Card Styling */
+.image-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Hover State: Zoom Effect */
+.image-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay Caption */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-md);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-card:hover .overlay {
+    opacity: 1;
+}
+
+.caption {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* ==========================================
+   4. Lightbox Preview Modal (Structure)
+   ========================================== */
+.lightbox {
+    display: none; /* Hide by default */
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    text-align: center;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: var(--border-radius);
+}
+
+.lightbox-caption {
+    color: #ffffff;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Lightbox Controls */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* ==========================================
+   5. Responsive Breakpoints
+   ========================================== */
+
+/* Mobile view: wrap chips & flex stacking */
+@media (max-width: 640px) {
+    .filter-chips {
+        gap: 6px;
+    }
+
+    .chip {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+}
+
+/* Tablet & Desktop breakpoint refinements */
+@media (min-width: 1024px) {
+    .gallery-grid {
+        gap: var(--spacing-lg);
+    }
+}

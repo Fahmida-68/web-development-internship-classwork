@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma Café - Login & Navigation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <!-- Left: Logo -->
+            <a href="#" class="logo">Aroma Café</a>
+
+            <!-- Middle: Menu Items -->
+            <nav class="nav-menu">
+                <a href="#">Home</a>
+                <a href="#">Menu</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <!-- Right: Login Button -->
+            <div class="nav-action">
+                <a href="#login" class="btn-nav">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Blueprint -->
+    <main class="page-container">
+        <!-- Left Section: Brand / Illustration -->
+        <section class="brand-section">
+            <h1>Welcome to Aroma Café</h1>
+            <p>Experience the finest handcrafted coffee and fresh pastries in a cozy atmosphere.</p>
+            <div class="illustration-box">
+                <span class="coffee-icon">☕</span>
+            </div>
+        </section>
+
+        <!-- Right Section: Form Card -->
+        <section class="form-section" id="login">
+            <div class="form-card">
+                <h2>Account Login</h2>
+                
+                <!-- Error Area -->
+                <div class="error-area" id="errorMsg">
+                    Invalid email or password. Please try again.
+                </div>
+
+                <form action="#" method="POST">
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="example@gmail.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox"> Remember me
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Sign In</button>
+                </form>
+
+                <!-- Footer Links -->
+                <footer class="form-footer">
+                    <p>Don't have an account? <a href="#">Sign up</a></p>
+                    <p><a href="#">Forgot password?</a></p>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

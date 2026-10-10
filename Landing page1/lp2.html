@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler Blog - Photo Row Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="gallery-header">
+        <h1>Travel Photo Gallery</h1>
+        <p>Explore breathtaking views from around the world</p>
+
+        <!-- Category Filter (Chips) -->
+        <div class="filter-chips">
+            <button class="chip active">All</button>
+            <button class="chip">Mountains</button>
+            <button class="chip">Beaches</button>
+            <button class="chip">Forests</button>
+            <button class="chip">Cities</button>
+        </div>
+    </header>
+
+    <!-- Grid / Photo Row Section -->
+    <main class="gallery-container">
+        <div class="gallery-grid">
+            
+            <!-- Photo Card 1 -->
+            <div class="image-card">
+                <img src="https://picsum.photos/id/1015/600/400" alt="Mountain View">
+                <div class="overlay">
+                    <span class="caption">Mountain Adventure</span>
+                </div>
+            </div>
+
+            <!-- Photo Card 2 -->
+            <div class="image-card">
+                <img src="https://picsum.photos/id/1039/600/400" alt="Waterfall">
+                <div class="overlay">
+                    <span class="caption">Serene Waterfall</span>
+                </div>
+            </div>
+
+            <!-- Photo Card 3 -->
+            <div class="image-card">
+                <img src="https://picsum.photos/id/1025/600/400" alt="Forest Trail">
+                <div class="overlay">
+                    <span class="caption">Forest Trail</span>
+                </div>
+            </div>
+
+            <!-- Photo Card 4 -->
+            <div class="image-card">
+                <img src="https://picsum.photos/id/1040/600/400" alt="Ocean Waves">
+                <div class="overlay">
+                    <span class="caption">Ocean Waves</span>
+                </div>
+            </div>
+
+            <!-- Photo Card 5 -->
+            <div class="image-card">
+                <img src="https://picsum.photos/id/1050/600/400" alt="Blue Lake">
+                <div class="overlay">
+                    <span class="caption">Blue Lake</span>
+                </div>
+            </div>
+
+            <!-- Photo Card 6 -->
+            <div class="image-card">
+                <img src="https://picsum.photos/id/1067/600/400" alt="City Skyline">
+                <div class="overlay">
+                    <span class="caption">City Lights</span>
+                </div>
+            </div>
+
+            <!-- Photo Card 7 -->
+            <div class="image-card">
+                <img src="https://picsum.photos/id/1084/600/400" alt="Desert Dunes">
+                <div class="overlay">
+                    <span class="caption">Desert Dunes</span>
+                </div>
+            </div>
+
+            <!-- Photo Card 8 -->
+            <div class="image-card">
+                <img src="https://picsum.photos/id/1018/600/400" alt="Snow Peaks">
+                <div class="overlay">
+                    <span class="caption">Snow Peaks</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Lightbox Modal Blueprint -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn">&times;</span>
+        <button class="nav-btn prev-btn">&#10094;</button>
+        <div class="lightbox-content">
+            <img src="https://picsum.photos/id/1015/1200/800" alt="Preview">
+            <p class="lightbox-caption">Mountain Adventure</p>
+        </div>
+        <button class="nav-btn next-btn">&#10095;</button>
+    </div>
+
+</body>
+</html>
